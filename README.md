@@ -10,30 +10,26 @@ Step1. Install RF-Tracker.
 ```shell
 git clone https://github.com/Skyteens/RF-Tracker.git
 cd RF-Tracker
-pip3 install -r requirements.txt
-python3 setup.py develop
+conda create -n <ENV_NAME> python=3.8
+conda activate 
+pip install -r requirements.txt
+
 ```
 
-Step2. Install [pycocotools](https://github.com/cocodataset/cocoapi).
-
-```shell
-pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-```
-
-Step3. Others
-```shell
-pip3 install cython_bbox
-```
 
 ## Demo
 Run RF-Tracker:
 
 1. prepare a folder of each video frame and its rotated bounding box detections
-2. Run the demo.py with updated parameters
 
 ```shell
 cd <RF-Tracker_HOME>
 python3 demo.py
+```
+
+2. For different association methods
+```shell
+python3 demo.py --match [gwd,bd,kld]
 ```
 
 ## Acknowledgement
